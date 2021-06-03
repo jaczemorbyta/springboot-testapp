@@ -28,3 +28,6 @@
 .vscode/
 /target/
 /es-storage/
+
+### Mongo DB ###
+/mongodb/
