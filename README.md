@@ -9,4 +9,5 @@ Basic SpringBoot Application
 
 ## Installation
 Clone repository (git clone <repository>)
+
 Start Mongo DB with docker compose (in project directory: docker-compose up)
