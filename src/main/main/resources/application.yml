@@ -1,0 +1,12 @@
+active-profile: local
+spring:
+  profiles:
+    active: '@activatedProperties@'
+  jmx:
+    enabled: true
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: database
+      authentication-database: admin
