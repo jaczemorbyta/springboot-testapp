@@ -10,8 +10,3 @@ spring:
       port: 27017
       database: database
       authentication-database: admin
-  servlet:
-    multipart:
-      max-file-size: 5MB
-      max-request-size: 5MB
-
