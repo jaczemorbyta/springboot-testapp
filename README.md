@@ -1,5 +1,5 @@
 # SpringBoot TestApp
-Basic SpringBoot Application
+Basic SpringBoot com.example.SpringBootTest.Application
 
 ## Requirement
 - (Optional) IntelliJ https://www.jetbrains.com/idea/download
