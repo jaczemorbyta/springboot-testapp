@@ -1,6 +1,5 @@
 package com.example.SpringBootTest.employee.data;
 
-import com.googlecode.jmapper.annotations.JMap;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,14 +11,12 @@ public class Employee {
     @Id
     private String id;
 
-    private String firstName;
-    private String lastName;
+    private Person person;
     private BigDecimal wage;
 
     public static Employee fromRequest(EmployeeRequest request) {
         Employee employee = new Employee();
-        employee.setFirstName(request.getFirstName());
-        employee.setLastName(request.getLastName());
+        employee.setPerson(Person.fromRequest(request));
         employee.setWage(request.getWage());
 
         return employee;
@@ -29,20 +26,16 @@ public class Employee {
         return id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public Person getPerson() {
+        return person;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     public BigDecimal getWage() {
@@ -53,4 +46,34 @@ public class Employee {
         this.wage = wage;
     }
 
+    private static class Person {
+
+        private String firstName;
+        private String lastName;
+
+        public static Person fromRequest(EmployeeRequest request) {
+            Person person = new Person();
+            person.setFirstName(request.getFirstName());
+            person.setLastName(request.getLastName());
+
+            return person;
+        }
+
+        public String getFirstName() {
+            return firstName;
+        }
+
+        public void setFirstName(String firstName) {
+            this.firstName = firstName;
+        }
+
+        public String getLastName() {
+            return lastName;
+        }
+
+        public void setLastName(String lastName) {
+            this.lastName = lastName;
+        }
+
+    }
 }
