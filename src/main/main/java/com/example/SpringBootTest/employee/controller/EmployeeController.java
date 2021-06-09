@@ -30,7 +30,7 @@ public class EmployeeController {
 
     @PostMapping
     public ResponseEntity<Employee> addEmployee(@RequestBody EmployeeRequest request) {
-        Employee employee = employeeRepository.save(new Employee(request));
+        Employee employee = employeeRepository.save(Employee.fromRequest(request));
 
         return ResponseEntity.ok(employee);
     }

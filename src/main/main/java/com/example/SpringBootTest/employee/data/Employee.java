@@ -16,10 +16,13 @@ public class Employee {
     private String lastName;
     private BigDecimal wage;
 
-    public Employee(EmployeeRequest request) {
-        this.setFirstName(request.getFirstName());
-        this.setLastName(request.getLastName());
-        this.setWage(request.getWage());
+    public static Employee fromRequest(EmployeeRequest request) {
+        Employee employee = new Employee();
+        employee.setFirstName(request.getFirstName());
+        employee.setLastName(request.getLastName());
+        employee.setWage(request.getWage());
+
+        return employee;
     }
 
     public String getId() {
