@@ -11,4 +11,6 @@ public interface EmployeeRepository {
     Employee save(Employee employee);
 
     List<Employee> findAll();
+
+    Optional<Employee> findOneByName(String firstName, String lastName);
 }
