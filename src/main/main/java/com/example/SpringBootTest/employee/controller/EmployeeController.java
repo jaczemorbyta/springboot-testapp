@@ -1,6 +1,5 @@
 package com.example.SpringBootTest.employee.controller;
 
-import com.example.SpringBootTest.utils.Mapper;
 import com.example.SpringBootTest.employee.data.Employee;
 import com.example.SpringBootTest.employee.data.EmployeeRequest;
 import com.example.SpringBootTest.employee.repository.EmployeeRepository;
@@ -31,7 +30,7 @@ public class EmployeeController {
 
     @PostMapping
     public ResponseEntity<Employee> addEmployee(@RequestBody EmployeeRequest request) {
-        Employee employee = employeeRepository.save(Mapper.map(request, Employee.class));
+        Employee employee = employeeRepository.save(new Employee(request));
 
         return ResponseEntity.ok(employee);
     }

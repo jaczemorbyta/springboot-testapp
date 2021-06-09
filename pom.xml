@@ -20,7 +20,7 @@
     <properties>
         <java.version>11</java.version>
     </properties>
-    https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -53,20 +53,6 @@
             <artifactId>spring-data-mongodb</artifactId>
             <version>2.2.2.RELEASE</version>
         </dependency>
-        <dependency>
-            <groupId>com.googlecode.jmapper-framework</groupId>
-            <artifactId>jmapper-core</artifactId>
-            <version>1.6.1.CR2</version>
-        </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

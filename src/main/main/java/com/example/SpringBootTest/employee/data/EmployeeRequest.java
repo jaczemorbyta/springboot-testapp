@@ -1,18 +1,11 @@
 package com.example.SpringBootTest.employee.data;
 
-import com.googlecode.jmapper.annotations.JMap;
-
 import java.math.BigDecimal;
 
 public class EmployeeRequest {
 
-    @JMap
     private String firstName;
-
-    @JMap
     private String lastName;
-
-    @JMap
     private BigDecimal wage;
 
     public String getFirstName() {

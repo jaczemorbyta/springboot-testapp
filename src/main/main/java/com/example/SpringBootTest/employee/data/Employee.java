@@ -12,14 +12,15 @@ public class Employee {
     @Id
     private String id;
 
-    @JMap
     private String firstName;
-
-    @JMap
     private String lastName;
-
-    @JMap
     private BigDecimal wage;
+
+    public Employee(EmployeeRequest request) {
+        this.setFirstName(request.getFirstName());
+        this.setLastName(request.getLastName());
+        this.setWage(request.getWage());
+    }
 
     public String getId() {
         return id;
