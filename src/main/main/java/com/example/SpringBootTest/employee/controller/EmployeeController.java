@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -33,6 +34,17 @@ public class EmployeeController {
         Employee employee = employeeRepository.save(Employee.fromRequest(request));
 
         return ResponseEntity.ok(employee);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Employee>> findAll(){
+        List<Employee> employeeList = employeeRepository.findAll();
+
+        if(employeeList.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(employeeList);
+        }
     }
 
 }
